@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-neon-blue: #00f2ff;
+  --color-neon-pink: #ff00e5;
+  --color-neon-purple: #9d00ff;
+  --color-neon-yellow: #f7ff00;
+  
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px var(--color-neon-blue), 0 0 10px var(--color-neon-blue);
+  }
+  to {
+    box-shadow: 0 0 10px var(--color-neon-blue), 0 0 20px var(--color-neon-blue);
+  }
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.glow-text-pink {
+  text-shadow: 0 0 10px rgba(255, 0, 229, 0.5), 0 0 20px rgba(255, 0, 229, 0.3);
+}
+
+.neon-border-blue {
+  border: 1px solid var(--color-neon-blue);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.neon-border-pink {
+  border: 1px solid var(--color-neon-pink);
+  box-shadow: 0 0 10px rgba(255, 0, 229, 0.2);
+}
